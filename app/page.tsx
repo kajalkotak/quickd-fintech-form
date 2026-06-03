@@ -28,7 +28,7 @@ export default function Home() {
     fundingRequirement: "",
     facilityRequested: "",
     purposeOfLoan: "",
-    facilityRequested: "",
+    // facilityRequested: "",
     collateralAvailable: "",
     collateralType: "",
     propertyValue: "",
