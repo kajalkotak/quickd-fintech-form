@@ -64,68 +64,66 @@ export default function Home() {
       return;
     }
     try {
-  setLoading(true);
+      setLoading(true);
 
-  await fetch(
-    "https://script.google.com/macros/s/AKfycbw5bJRSeH7syiGjCW74zj82U4stD4SLEmPm4fjUchWVueTHf6wFCMRT9wG8e8q08LVVfw/exec",
-    {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8",
-      },
-      body: JSON.stringify(formData),
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbw5bJRSeH7syiGjCW74zj82U4stD4SLEmPm4fjUchWVueTHf6wFCMRT9wG8e8q08LVVfw/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+          },
+          body: JSON.stringify(formData),
+        },
+      );
+
+      alert("Form Submitted Successfully ✅");
+
+      setFormData({
+        companyName: "",
+        mobileNo: "",
+        regOfficeAddress: "",
+        factoryAddress: "",
+        companyFormation: "",
+        businessCategory: "",
+        yearOfFormation: "",
+        yearOfBusiness: "",
+        turnoverLastYear: "",
+        turnoverCurrentYear: "",
+        existingBanker: "",
+        existingLoan: "",
+        loanType: "",
+        sanctionedAmount: "",
+        outstandingAmount: "",
+        existingLoanCollateral: "",
+        securityType: "",
+        marketValue: "",
+        natureOfBusiness: "",
+        typeOfActivity: "",
+        experienceOfPromoters: "",
+        fundingRequirement: "",
+        facilityRequested: "",
+        purposeOfLoan: "",
+        collateralAvailable: "",
+        collateralType: "",
+        propertyValue: "",
+        clientConcern: "",
+        managementRemarks: "",
+      });
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong");
+    } finally {
+      setLoading(false);
     }
-  );
-
-  alert("Form Submitted Successfully ✅");
-
-  setFormData({
-    companyName: "",
-    mobileNo: "",
-    regOfficeAddress: "",
-    factoryAddress: "",
-    companyFormation: "",
-    businessCategory: "",
-    yearOfFormation: "",
-    yearOfBusiness: "",
-    turnoverLastYear: "",
-    turnoverCurrentYear: "",
-    existingBanker: "",
-    existingLoan: "",
-    loanType: "",
-    sanctionedAmount: "",
-    outstandingAmount: "",
-    existingLoanCollateral: "",
-    securityType: "",
-    marketValue: "",
-    natureOfBusiness: "",
-    typeOfActivity: "",
-    experienceOfPromoters: "",
-    fundingRequirement: "",
-    facilityRequested: "",
-    purposeOfLoan: "",
-    collateralAvailable: "",
-    collateralType: "",
-    propertyValue: "",
-    clientConcern: "",
-    managementRemarks: "",
-  });
-
-} catch (error) {
-  console.error(error);
-  alert("Something went wrong");
-} finally {
-  setLoading(false);
-}
   };
-  
 
   return (
     <main className="min-h-screen bg-gray-100 py-10 px-4">
       <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-8">
         <h1 className="text-3xl font-bold text-center mb-8">
-          Business Loan Requirement Form
+          Loan Request Form
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
